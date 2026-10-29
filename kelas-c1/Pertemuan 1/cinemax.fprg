@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Alfi Fadhilah"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-12 11:20:40 PM"/>
+        <attribute name="created" value="QWxmaSBGYWRoaWxhaDtMQVBUT1AtRUhGUzVRVkI7MjAyNi0wOS0xMjsxMDo1NDo1MiBQTTszNTY5"/>
+        <attribute name="edited" value="QWxmaSBGYWRoaWxhaDtMQVBUT1AtRUhGUzVRVkI7MjAyNi0wOS0xMjsxMToyMDo0MCBQTTsxOzM2Njg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="usia, tiket" type="Integer" array="False" size=""/>
+            <output expression="&quot;SELAMAT DATANG DI BIOSKOP CINEMAX&quot;" newline="True"/>
+            <output expression="&quot;Masukkan usia anda: &quot;" newline="False"/>
+            <input variable="usia"/>
+            <output expression="&quot;Masukkan jumlah tiket anda: &quot;" newline="False"/>
+            <input variable="tiket"/>
+            <if expression="usia &lt; 12">
+                <then>
+                    <output expression="&quot;Usia anda dibawah umur!!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="usia &lt; 60">
+                        <then>
+                            <output expression="&quot;SUKSES&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;GAGAL&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

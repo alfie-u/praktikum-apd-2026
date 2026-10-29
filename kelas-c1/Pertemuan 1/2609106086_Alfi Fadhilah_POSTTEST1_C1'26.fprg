@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Alfi Fadhilah"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-14 09:13:52 PM"/>
+        <attribute name="created" value="QWxmaSBGYWRoaWxhaDtMQVBUT1AtRUhGUzVRVkI7MjAyNi0wOS0xNDswNzo1ODoyNCBQTTszNTgw"/>
+        <attribute name="edited" value="QWxmaSBGYWRoaWxhaDtMQVBUT1AtRUhGUzVRVkI7MjAyNi0wOS0xNDswOToxMzo1MiBQTTsxOzM2ODI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hargaDasar, jumlahTiket, usia, kategoriFilm, totalHarga, harga, i" type="Integer" array="False" size=""/>
+            <assign variable="hargaDasar" expression="60000"/>
+            <assign variable="totalHarga" expression="0"/>
+            <output expression="&quot;Selamat Datang di CineMax&quot;" newline="True"/>
+            <output expression="&quot;Masukkan jumlah tiket yang ingin dibeli: &quot;" newline="True"/>
+            <input variable="jumlahTiket"/>
+            <output expression="&quot;Pilih angka: 1.Umum 2.Dewasa&quot;" newline="True"/>
+            <input variable="kategoriFilm"/>
+            <for variable="i" start="1" end="jumlahTiket" direction="inc" step="1">
+                <output expression="&quot;Masukkan usia anda: &quot;" newline="True"/>
+                <input variable="usia"/>
+                <if expression="kategoriFilm = 2 AND usia &lt; 17">
+                    <then>
+                        <output expression="&quot;Maaf, usia di bawah 17 tahun tidak diperbolehkan membeli tiket Dewasa (17+). Tiket ini dibatalkan.&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="usia &lt; 12">
+                            <then>
+                                <assign variable="harga" expression="hargaDasar - (0.2 * hargaDasar)"/>
+                                <assign variable="totalHarga" expression="totalHarga + harga"/>
+                            </then>
+                            <else>
+                                <if expression="usia &lt;= 60">
+                                    <then>
+                                        <assign variable="harga" expression="hargaDasar"/>
+                                        <assign variable="totalHarga" expression="totalHarga + harga"/>
+                                        <output expression="&quot;Tiket nomor &quot;, i, &quot; untuk usia &quot;, usia, &quot; seharga Rp&quot;, harga" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="harga" expression="hargaDasar - (0.3 * hargaDasar)"/>
+                                        <assign variable="totalHarga" expression="totalHarga + harga"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
